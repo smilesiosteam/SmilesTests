@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final public class PublisherSpy<T> {
-    private(set) var value: T!
+    private(set) public var value: T!
     private var cancellable: Cancellable?
     public init(_ publisher: any Publisher<T, Never>) {
         cancellable = publisher.sink { [weak self] value in
